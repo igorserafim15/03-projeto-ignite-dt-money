@@ -1,14 +1,16 @@
-import React from 'react'
 import { ThemeProvider } from 'styled-components'
-import { GlobalStyle } from './styles/globals'
+import { TransactionsProvider } from './contexts/TransactionsContext'
+import { Transactions } from './pages/Transactions'
+import { GlobalStyle } from './styles/global'
 import { defaultTheme } from './styles/themes/default'
 
-export const App = () => {
+export function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
-      <div>App</div>
+      <TransactionsProvider>
+        <Transactions />
+      </TransactionsProvider>
     </ThemeProvider>
   )
 }
-
